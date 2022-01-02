@@ -14,13 +14,13 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Entity
 public class Transactions {
-    @Id
-    private Long customer_id;
 
+    private Long customer_id;
     private String tr_datetime;
     private Long mcc_code;
     private Long tr_type;
     private Long amount;
+    @Id
     private Long term_id;
 
 
