@@ -45,13 +45,14 @@ public class AnswersController {
         out.add(max);
         out.add(num);
         out.add(Double.valueOf(max_n));
+        System.out.println(needed);
         return needed;
     }
     @PostMapping
     public String getTransactionsPage(Model model){
-        List<Double> nums = new ArrayList<>();
-        nums = answerish(1);
+        List<Double> nums = new ArrayList<Double>();
+        nums = answerish(606275);
         model.addAttribute("nums", nums);
-        return "redirect:/Transactions_page";
+        return "answers_page";
     }
 }
