@@ -9,21 +9,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.io.IOException;
+import java.lang.reflect.Parameter;
 
 @Controller
-public class DataAddController {
+public class InputFromFileController {
     @Autowired
     private TransactionsRepository tranrep;
 
-    @GetMapping("/adddata")
-    public String getAddDataPage() {
-        return "addData_page";
+    @GetMapping("/inputFromFile")
+    public String getFromFile(){
+        return "InputFromFile";
     }
 
-    @PostMapping("/adddata")
-    public String AddData(Transactions tran) {
-        tranrep.save(tran);
-        return "redirect:/adddata";
+    @PostMapping("/inputFromFile")
+    public String AddData(Transactions tran) throws IOException {
+        Parser p = new Parser();
+        p.UseScanner();
+        return "redirect:/inputFromFile";
     }
 }
-

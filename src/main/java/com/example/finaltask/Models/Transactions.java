@@ -19,9 +19,8 @@ public class Transactions {
     private String tr_datetime;
     private Long mcc_code;
     private Long tr_type;
-    private Long amount;
+    private double amount;
     @Id
-    private Long term_id;
-
+    private double term_id;
 
 }

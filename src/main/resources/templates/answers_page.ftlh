@@ -10,9 +10,23 @@
 <body>
 <div>
     <form action="/answer" method="post">
-        <input name="customer_id" placeholder="Id клиента">
+        <input name="ID" placeholder="Id клиента">
         <input type="submit" value="Answer me">
     </form>
+    <table>
+        <tr>
+            <th>Максимальная транзакция</th>
+            <th>Самый частый модуль</th>
+            <th>Сколько модуля</th>
+        </tr>
+        <#list nums as n>
+            <tr>
+                <td>${n.get(0)}</td>
+                <td>${n.get(1)}</td>
+                <td>${n.get(2)}</td>
+            </tr>
+        </#list>
+    </table>
 </div>
 </body>
 </html>
