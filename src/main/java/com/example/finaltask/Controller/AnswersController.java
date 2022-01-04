@@ -18,9 +18,7 @@ import java.util.List;
 public class AnswersController {
     private final TransactionsRepository tranrep;
 
-    public AnswersController(TransactionsRepository tranrep) {
-        this.tranrep = tranrep;
-    }
+    public AnswersController(TransactionsRepository tranrep) {this.tranrep = tranrep;}
 
     @GetMapping("/answers")
     public String getAnswers() throws IOException {
@@ -29,7 +27,7 @@ public class AnswersController {
 
     @PostMapping
     public String getTransactionsPage(Model model, @RequestParam(value = "customer_id", required = true) String ID) throws IOException {
-        List<Transactions> trans = tranrep.findAllByCustomeridOrderByAmountAmountDesc(Long.valueOf(ID));
+        List<Transactions> trans = tranrep.findAllByCustomer_idOrderByAmountAmountDesc(Long.valueOf(ID));
         model.addAttribute("trans", trans);
         return "answers_page";
     }

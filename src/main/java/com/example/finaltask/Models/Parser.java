@@ -34,7 +34,7 @@ public class Parser {
                 String data = scanner.next();
                 switch (flag) {
                     case 0:
-                        tran.setCustomerid(Long.valueOf(data));
+                        tran.setCustomer_id(Long.valueOf(data));
                         break;
                     case 1:
                         tran.setTr_datetime(data);

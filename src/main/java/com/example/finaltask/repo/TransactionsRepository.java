@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface TransactionsRepository extends JpaRepository<Transactions, Double>{
     @Query (value = "select * from Transactions where customer_id like :id order by amount desc", nativeQuery = true)
-    List<Transactions> findAllByCustomeridOrderByAmountAmountDesc(Long id);
+    List<Transactions> findAllByCustomer_idOrderByAmountAmountDesc(Long id);
 }

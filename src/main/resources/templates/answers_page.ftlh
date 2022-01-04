@@ -20,7 +20,7 @@
         </tr>
         <#list trans as transaction>
             <tr>
-                <td>${transaction.customerid}</td>
+                <td>${transaction.customer_id}</td>
                 <td>${transaction.amount}</td>
             </tr>
         </#list>
