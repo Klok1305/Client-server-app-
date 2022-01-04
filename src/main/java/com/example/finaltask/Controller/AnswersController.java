@@ -21,15 +21,12 @@ import java.util.Scanner;
 public class AnswersController {
     @GetMapping("/answers")
     public String getAnswers() throws IOException {
-        Parser p = new Parser();
-        p.UseScanner();
         //System.out.println(p.answerish(606275).toString());
         return "answers_page";
     }
 
     @PostMapping
     public String getTransactionsPage(Model model) throws IOException {
-
         return null;
     }
 }

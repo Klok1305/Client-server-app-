@@ -16,14 +16,16 @@ public class InputFromFileController {
     @Autowired
     private TransactionsRepository tranrep;
 
+    @Autowired
+    private Parser p;
+
     @GetMapping("/inputFromFile")
     public String getFromFile(){
         return "InputFromFile";
     }
 
     @PostMapping("/inputFromFile")
-    public String AddData(Transactions tran) throws IOException {
-        Parser p = new Parser();
+    public String AddData() throws IOException {
         p.UseScanner();
         return "redirect:/inputFromFile";
     }
