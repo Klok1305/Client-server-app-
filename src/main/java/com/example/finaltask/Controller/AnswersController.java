@@ -23,7 +23,7 @@ public class AnswersController {
     public String getAnswers() throws IOException {
         Parser p = new Parser();
         p.UseScanner();
-        System.out.println(p.answerish(606275).toString());
+        //System.out.println(p.answerish(606275).toString());
         return "answers_page";
     }
 

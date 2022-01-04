@@ -2,6 +2,8 @@ package com.example.finaltask.Models;
 
 import com.example.finaltask.repo.TransactionsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -10,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
-
+@Component
 public class Parser {
     @Autowired
     private TransactionsRepository tranrep;
@@ -56,16 +58,16 @@ public class Parser {
                 flag++;
             }
             flag = 0;
-            ClientIDs.add(tran.getCustomer_id());
-            Amounts.add(tran.getAmount());
-            //tranrep.save(tran);
+            //ClientIDs.add(tran.getCustomer_id());
+            //Amounts.add(tran.getAmount());
+            tranrep.save(tran);
         }
-        List<Double> n;
-        n = answerish(606275);
-        reader.close();
-        FileWriter a = new FileWriter("C:\\Users\\B.N.B\\IdeaProjects\\demo\\temp.txt");
-        a.write(n.get(0).toString() + ',' + n.get(1).toString()+','+ n.get(2).toString()+','+n.get(3).toString());
-        a.close();
+        //List<Double> n;
+        //n = answerish(606275);
+        //reader.close();
+        //FileWriter a = new FileWriter("C:\\Users\\B.N.B\\IdeaProjects\\demo\\temp.txt");
+        //a.write(n.get(0).toString() + ',' + n.get(1).toString()+','+ n.get(2).toString()+','+n.get(3).toString());
+        //a.close();
     }
     public List<Double> answerish(double id) {
         List<Double> needed = new ArrayList<>();
