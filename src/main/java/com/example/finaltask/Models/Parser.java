@@ -2,6 +2,7 @@ package com.example.finaltask.Models;
 
 import com.example.finaltask.repo.TransactionsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
@@ -58,7 +59,7 @@ public class Parser {
             }
             flag = 0;
             tranrep.save(tran);
-
+            tranrep.flush();
         }
     }
 }

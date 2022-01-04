@@ -20,7 +20,7 @@ public class InputFromFileController {
     private Parser p;
 
     @GetMapping("/inputFromFile")
-    public String getFromFile(){
+    public String getFromFile() {
         return "InputFromFile";
     }
 
