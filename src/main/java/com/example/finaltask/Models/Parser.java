@@ -58,7 +58,7 @@ public class Parser {
             }
             flag = 0;
             tranrep.save(tran);
-            
+
         }
     }
 }
