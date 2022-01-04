@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @Entity
 public class Transactions {
 
-    private Long customer_id;
+    private Long customerid;
     @Id
     private String tr_datetime;
     private Long mcc_code;

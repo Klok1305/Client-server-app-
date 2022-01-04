@@ -10,7 +10,7 @@
 <body>
 <div>
     <form action="/adddata" method="post">
-        <input name="customer_id" placeholder="Id клиента">
+        <input name="customerid" placeholder="Id клиента">
         <input name="tr_datetime" placeholder="дата">
         <input name="mcc_code" placeholder="mcc код">
         <input name="amount" placeholder="стоимость">

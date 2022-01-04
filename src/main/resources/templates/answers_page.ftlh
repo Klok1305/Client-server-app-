@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -9,11 +9,22 @@
 </head>
 <body>
 <div>
-     <form action="/answer" method="post">
-        <input name="ID" placeholder="Id клиента">
+     <form th:action="/answer" method="post">
+        <input type="text" th:name="customer_id" placeholder="ID">
         <input type="submit" value="Answer me">
     </form>
-
+    <table>
+        <tr>
+            <th>customer_id</th>
+            <th>amount</th>
+        </tr>
+        <#list trans as transaction>
+            <tr>
+                <td>${transaction.customerid}</td>
+                <td>${transaction.amount}</td>
+            </tr>
+        </#list>
+    </table>
 </div>
 </body>
 </html>
