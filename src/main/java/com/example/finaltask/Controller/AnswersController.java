@@ -22,13 +22,8 @@ public class AnswersController {
 
     @GetMapping("/answers")
     public String getAnswers() throws IOException {
-        return "answers_page";
-    }
-
-    @PostMapping
-    public String listie(@ModelAttribute Transactions tran, Model model) throws IOException {
-        List<Transactions> trans = tranrep.findAllByCustomer_idOrderByAmountAmountDesc(tran.getCustomer_id());
-        model.addAttribute("trans", trans);
-        return "redirect:/answers";
+        //List<Transactions> trans = tranrep.findAllByCustomer_idOrderByAmountAmountDesc(tran.getCustomer_id());
+        //model.addAttribute("trans", trans);
+        return "answers_page.ftlh";
     }
 }

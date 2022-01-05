@@ -15,7 +15,8 @@ public class UsersController {
     private TransactionsRepository tranrep;
     @GetMapping("/trasactions")
     public String getTransactionsPage(Model model){
-        List<Transactions> trans = tranrep.findAll();
+        //List<Transactions> all = tranrep.findAll();
+        List<Transactions> trans = tranrep.returnthing();
         model.addAttribute("trans", trans);
         return "Transactions_page";
     }

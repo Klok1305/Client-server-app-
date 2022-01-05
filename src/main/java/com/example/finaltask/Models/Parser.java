@@ -24,7 +24,6 @@ public class Parser {
         String line = null;
         Scanner scanner = null;
         int flag = 0;
-        List<Transactions> tr = new ArrayList<>();
 
         while ((line = reader.readLine()) != null) {
             scanner = new Scanner(line);
