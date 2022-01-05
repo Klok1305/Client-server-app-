@@ -13,4 +13,7 @@ public interface TransactionsRepository extends JpaRepository<Transactions, Doub
 
     @Query (value = "select distinct on (customer_id) * from Transactions order by customer_id, amount desc", nativeQuery = true)
     List<Transactions> returnthing();
+
+    @Query (value = "select customer_id, amount from Transactions where customer_id like :id", nativeQuery = true)
+    List<Transactions> ret2(Long id);
 }
