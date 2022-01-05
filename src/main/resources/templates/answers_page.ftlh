@@ -8,11 +8,12 @@
     <title>Document</title>
 </head>
 <body>
+<h1>Id</h1>
+<form action="#" th:action="@{/answers}" th:object="Transactions" method="post">
+    <p>Id: <input type="customer_id" th:field="*{id}" /></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" />
+</form>
 <div>
-     <form th:action="/answer" method="post">
-        <input type="text" th:name="customer_id" placeholder="ID">
-        <input type="submit" value="Answer me">
-    </form>
     <table>
         <tr>
             <th>customer_id</th>

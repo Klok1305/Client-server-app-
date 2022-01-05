@@ -6,6 +6,7 @@ import com.example.finaltask.repo.TransactionsRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -26,9 +27,9 @@ public class AnswersController {
     }
 
     @PostMapping
-    public String getTransactionsPage(Model model, @RequestParam(value = "customer_id", required = true) String ID) throws IOException {
-        List<Transactions> trans = tranrep.findAllByCustomer_idOrderByAmountAmountDesc(Long.valueOf(ID));
+    public String listie(@ModelAttribute Transactions tran, Model model) throws IOException {
+        List<Transactions> trans = tranrep.findAllByCustomer_idOrderByAmountAmountDesc(tran.getCustomer_id());
         model.addAttribute("trans", trans);
-        return "answers_page";
+        return "update:/answers";
     }
 }
