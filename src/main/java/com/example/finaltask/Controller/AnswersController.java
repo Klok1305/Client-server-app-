@@ -30,6 +30,6 @@ public class AnswersController {
     public String listie(@ModelAttribute Transactions tran, Model model) throws IOException {
         List<Transactions> trans = tranrep.findAllByCustomer_idOrderByAmountAmountDesc(tran.getCustomer_id());
         model.addAttribute("trans", trans);
-        return "update:/answers";
+        return "redirect:/answers";
     }
 }

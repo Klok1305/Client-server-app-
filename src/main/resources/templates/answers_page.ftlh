@@ -13,19 +13,17 @@
     <p>Id: <input type="customer_id" th:field="*{id}" /></p>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" />
 </form>
-<div>
-    <table>
+<table>
+    <tr>
+        <th>customer_id</th>
+        <th>amount</th>
+    </tr>
+    <#list trans as transaction>
         <tr>
-            <th>customer_id</th>
-            <th>amount</th>
+            <td>${transaction.customer_id}</td>
+            <td>${transaction.amount}</td>
         </tr>
-        <#list trans as transaction>
-            <tr>
-                <td>${transaction.customer_id}</td>
-                <td>${transaction.amount}</td>
-            </tr>
-        </#list>
-    </table>
-</div>
+    </#list>
+</table>
 </body>
 </html>
